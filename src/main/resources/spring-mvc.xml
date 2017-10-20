@@ -12,11 +12,10 @@
                         http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
 
     <!-- 自动扫描  @Controller-->
-    <context:component-scan base-package="com.tbSSMDemo.controller"/>
-    <context:component-scan base-package="com.tbSSMDemo.service"/>
+    <context:component-scan base-package="com.tbSSMDemo"/>
 
     <!--避免IE执行AJAX时，返回JSON出现下载文件 -->
-    <bean id="mappingJacksonHttpMessageConverter"
+    <bean id="mappingJackson2HttpMessageConverter"
           class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
         <property name="supportedMediaTypes">
             <list>
@@ -28,7 +27,7 @@
     <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
         <property name="messageConverters">
             <list>
-                <ref bean="mappingJacksonHttpMessageConverter"/> <!-- JSON转换器 -->
+                <ref bean="mappingJackson2HttpMessageConverter"/> <!-- JSON转换器 -->
             </list>
         </property>
     </bean>

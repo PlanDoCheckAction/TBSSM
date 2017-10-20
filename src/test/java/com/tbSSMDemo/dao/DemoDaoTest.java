@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -49,7 +50,7 @@ public class DemoDaoTest {
     @Test
     public void selectDemoByDemoId() throws Exception {
         Demo demo = demoDao.selectDemoByDemoId(10);
-        System.out.println(demo.getDemoId()+","+demo.getDemoOne()+","+demo.getDemoTwo());
+        System.out.println(demo);
         /*for (Demo d:list) {
             System.out.println(d.toString());
         }*/
